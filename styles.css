@@ -26,44 +26,40 @@ body {
 	background: #f5f5f5;
 	height: 85vh;
 	width: 30%;
-	margin: 4% auto 0%;
+	margin: 3% auto 0%;
 	padding: 0.5%;
 	border-radius: 1rem;
 	box-shadow: 0px 5px 26px -6px;
 }
 .display {
 	/* border: 1px solid black; */
-	height: 27vh;
+	height: 23vh;
 	margin: auto;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	text-align: end;
-	width: 95%;
-	box-shadow: inset 0px 0px 13px -6px;
+	width: 90%;
+	box-shadow: inset 0px 0px 10px -6px;
 }
-/* .bi {
+.bi {
 	cursor: pointer;
 	width: 6%;
-	margin-right: 90%;
-	margin-top: 1%;
+	margin-left: 5%;
 }
-.dark-mode {
-	height: 27vh;
-	margin: auto;
-	border-radius: 1rem;
-	text-align: end;
-	width: 95%;
-	box-shadow: inset 0px 0px 13px -6px;
-} */
-.operation-display {
-	font-size: 2rem;
-	margin-top: 3%;
-	margin-right: 3%;
+.wrapper-dark-mode {
+	background: #191a19;
+	color: #f6f6f6;
+	box-shadow: #000 0px 5px 26px -6px;
 }
 
-.total {
+.number-display {
+	font-size: 2rem;
+	margin-right: 3%;
+	margin-top: 2%;
+}
+.total-display {
 	font-size: 4rem;
 	margin-top: 13%;
-	margin-right: 3%;
+	margin-right: 2%;
 }
 .column {
 	width: 90%;
@@ -78,7 +74,7 @@ body {
 	display: grid;
 	grid-template-columns: 2.5fr 1fr 1fr;
 }
-.column button {
+.button {
 	height: 7vh;
 	border: none;
 	font-weight: 400;
@@ -87,17 +83,18 @@ body {
 	background: #f5f5f5;
 	box-shadow: 8px 8px 13px #d0d0d0, -8px -8px 13px #ffffff;
 }
-.column button:hover {
+
+.button:hover {
 	transform: scale(0.95);
+	background: #faf8f1;
 }
-.number {
-	color: #990000;
-}
-.operators {
+
+.operator {
 	color: #fd841f;
 }
-.operators-two {
-	color: #2a1a5e;
+
+.op-two {
+	color: #002b5b;
 }
 
 footer p {
@@ -105,4 +102,43 @@ footer p {
 	font-size: 0.9rem;
 	letter-spacing: 2px;
 	margin-top: 1%;
+}
+
+/* ------------------ Media queries------------------------- */
+
+@media only screen and (max-width: 900px) {
+	.wrapper {
+		width: 35%;
+	}
+	.column {
+		margin-top: 8%;
+		gap: 5%;
+	}
+	.all-buttons {
+		margin-top: 15%;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.wrapper {
+		width: 45%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.wrapper {
+		height: 100vh;
+		width: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+	.display {
+		height: 30vh;
+	}
+	.column {
+		margin-top: 8%;
+		gap: 8%;
+	}
+	.all-buttons {
+		margin-top: 20%;
+	}
 }
