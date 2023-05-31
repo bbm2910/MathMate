@@ -86,15 +86,16 @@ equalButton.addEventListener("click", function () {
 });
 
 
+function deleteLastChar() {
+    if (currentValue.length > 0) {
+        currentValue = currentValue.slice(0, -1);
+        numberDisplay.textContent = currentValue;
+    }
+}
 
-// deleteButton.addEventListener("click", function () {
-//     if (numberDisplay.textContent.length >= 1) {
-//         let displayArray = numberDisplay.textContent.split("");
-//         displayArray.pop();
-//         let displayString = displayArray.join("");
-//         numberDisplay.textContent = displayString;
-//     }
-// });
+deleteButton.addEventListener("click", deleteLastChar);
+
+
 
 
 
