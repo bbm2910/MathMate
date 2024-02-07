@@ -1,64 +1,141 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
-body,
+/*
+  2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
 h1,
 h2,
 h3,
 h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-	margin: 0;
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	background: #3282b8;
-	color: #191a19;
+	font-family: 'Marvel', sans-serif;
+	background: var(--white);
+	color: var(--dark);
 }
-
+:root {
+	--white: #fff;
+	--dark: #1f1e25;
+	--grey: #7d7c7c;
+	--yellow: #f0b65a;
+	--blue: #1e95e7;
+	--green: #99b84a;
+	--pink: #ff6b6b;
+	--purple: #895197;
+}
+.content {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	width: 80%;
+	margin: auto;
+}
+.text {
+	margin-top: 130%;
+}
+.text i {
+	font-size: 1.4rem;
+	margin-bottom: 60px;
+}
+.text p a {
+	text-decoration: none;
+	color: var(--green);
+}
+.text p a:hover {
+	text-decoration: underline;
+}
+.logo {
+	width: 10%;
+	display: inline-block;
+	margin-top: 3%;
+}
 .wrapper {
-	background: #f5f5f5;
-	height: 85vh;
-	width: 30%;
-	margin: 3% auto 0%;
-	padding: 0.5%;
-	border-radius: 1rem;
-	box-shadow: 0px 5px 26px -6px;
+	background: var(--white);
+	border: 1px solid var(--grey);
+	height: 80vh;
+	width: 40%;
+	margin: 10% auto 0%;
+	padding: 2%;
+	border-radius: 5px;
 }
 .display {
-	/* border: 1px solid black; */
-	height: 23vh;
-	margin: auto;
-	border-radius: 0.5rem;
+	background-color: var(--green);
+	border: 5px solid var(--grey);
+	margin: 3% auto;
+	border-radius: 3px;
 	text-align: end;
 	width: 90%;
-	box-shadow: inset 0px 0px 10px -6px;
 }
-.bi {
-	cursor: pointer;
-	width: 6%;
-	margin-left: 5%;
+
+.dark-mode {
+	background: var(--dark);
+	color: var(--white);
 }
 .wrapper-dark-mode {
-	background: #191a19;
-	color: #f6f6f6;
-	box-shadow: #000 0px 5px 26px -6px;
+	background-color: var(--dark);
+	color: var(--dark);
 }
 
 .number-display {
 	font-size: 2rem;
 	margin-right: 3%;
-	margin-top: 2%;
+	margin-top: 3%;
 }
 .total-display {
 	font-size: 4rem;
-	margin-top: 13%;
+	margin-top: 5%;
 	margin-right: 2%;
 }
 .column {
@@ -67,41 +144,73 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin-top: 6%;
-	gap: 10%;
+	gap: 5%;
 }
 
 #last-column {
 	display: grid;
-	grid-template-columns: 2.5fr 1fr 1fr;
+	grid-template-columns: 2.2fr 1fr 1fr;
+	gap: 5%;
 }
 .button {
-	height: 7vh;
 	border: none;
-	font-weight: 400;
-	font-size: 1.5rem;
-	border-radius: 10px;
-	background: #f5f5f5;
-	box-shadow: 8px 8px 13px #d0d0d0, -8px -8px 13px #ffffff;
+	font-size: 1.7rem;
+	font-weight: 700;
+	border-radius: 3px;
+	transition-duration: 0.1s;
+	background: var(--white);
+	opacity: 60%;
+	border: 1px solid var(--dark);
 }
 
 .button:hover {
 	transform: scale(0.95);
-	background: #faf8f1;
+	background: var(--white);
+	opacity: 100%;
 }
-
+.reset-button {
+	background-color: var(--yellow);
+	color: #fff;
+}
+.reset-button:hover {
+	color: var(--yellow);
+}
+.delete-button {
+	background-color: var(--pink);
+}
+.delete-button:hover {
+	color: var(--pink);
+}
 .operator {
-	color: #fd841f;
+	color: var(--purple);
+	background-color: var(--blue);
 }
-
+.operator:hover {
+	background-color: var(--blue);
+	color: var(--white);
+}
+.equal-button {
+	opacity: 100%;
+}
 .op-two {
 	color: #002b5b;
+}
+.number {
+	color: var(--white);
 }
 
 footer p {
 	text-align: center;
 	font-size: 0.9rem;
 	letter-spacing: 2px;
-	margin-top: 1%;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.dark-mode {
+	background-color: black;
+	color: white;
 }
 
 /* ------------------ Media queries------------------------- */

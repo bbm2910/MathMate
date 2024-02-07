@@ -2,6 +2,7 @@
 
 
 const wrapper = document.querySelector(".wrapper");
+const body = document.body;
 const darkMode = document.querySelector(".toggleDark-mode");
 const button = document.querySelectorAll(".button");
 
@@ -106,21 +107,23 @@ numberButton.forEach(numberButton => {
 
 darkMode.addEventListener("click", function () {
     const nightText = document.querySelector(".bi");
-    if (this.classList.toggle("bi-lightbulb")) {
-        nightText.textContent = "Light-mode";
-        wrapper.classList.add("wrapper-dark-mode");
-        button.forEach(button => {
-            button.style.boxShadow = "inset 6px 6px 12px #949494, inset -6px -6px 12px #ffffff";
-        });
+    const logos = document.querySelectorAll(".logo"); // Select all elements with class 'logo'
 
+    if (this.classList.toggle("bi-lightbulb")) {
+        body.classList.add('dark-mode');
+        wrapper.classList.add('wrapper-dark-mode');
+        logos.forEach(function (logo) { // Loop through each logo element
+            logo.style.filter = 'invert(100%)';
+        });
     } else {
-        wrapper.classList.remove("wrapper-dark-mode");
-        nightText.textContent = "Dark-mode";
-        button.forEach(button => {
-            button.style.boxShadow = "8px 8px 13px #d0d0d0, -8px -8px 13px #ffffff";
+        body.classList.remove('dark-mode');
+        wrapper.classList.remove('wrapper-dark-mode');
+        logos.forEach(function (logo) { // Loop through each logo element
+            logo.style.filter = 'invert(0%)';
         });
     }
 });
+
 
 
 
