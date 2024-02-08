@@ -109,6 +109,20 @@ body {
 	margin: 10% auto 0%;
 	padding: 2%;
 	border-radius: 5px;
+	background: rgba(217, 217, 217, 0.58);
+	border: 2px solid white;
+	box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+	backdrop-filter: blur(6px);
+	border-radius: 17px;
+	transition: all 0.5s;
+}
+.wrapper:hover {
+	border: 1px solid black;
+	transform: scale(1.02);
+}
+
+.wrapper:active {
+	transform: scale(0.95) rotateZ(1.7deg);
 }
 .display {
 	background-color: var(--green);
