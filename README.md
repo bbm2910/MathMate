@@ -15,10 +15,6 @@ To get started with the MathMate, follow these steps:
 [Clone or download the repository](https://bbm2910.github.io/MathMate/),
 navigate to the project directory, and open the index.html file in a web browser.
 
-## How to Use
-Once is loaded in your web browser, you will see a calculator interface with buttons representing numbers and operators.
-To perform a calculation, click the number buttons to enter the desired numbers.
-To obtain the result, click the "=" button.
 Enjoy!
 
 
