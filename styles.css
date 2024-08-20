@@ -316,11 +316,28 @@ footer p {
 		gap: 5%;
 	}
 	.button {
-		font-size: 1.3rem;
+		font-size: 1.7rem;
 		padding: 8px;
 	}
 	.all-buttons {
 		margin-top: 10%;
 	}
-
+	.text{
+		display: block;
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+	.button:hover {
+		transform: scale(1);
+		background: var(--white);
+		opacity: 100%;
+	}
+	.wrapper:hover {
+		border: 1px solid black;
+		transform: none;
+	}
+	
+	.wrapper:active {
+		transform: none;
+	}
 }
