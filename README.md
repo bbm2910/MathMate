@@ -3,6 +3,10 @@
 ## [Demo](https://bbm2910.github.io/MathMate/)
 This repository contains a simple web-based calculator implemented using HTML, CSS, and JavaScript. It allows users to perform basic arithmetic calculations such as addition, subtraction, multiplication, and division.
 
+## Compatibility and Requirements
+1. Web - a modern web browser (e.g., Chrome, Firefox, Safari, Edge) with a desktop or laptop display.
+2. Mobile Devices 
+
 ## Features
 Users can perform addition, subtraction, multiplication, and division operations.
 The calculator displays the entered numbers and the result of the calculation.
